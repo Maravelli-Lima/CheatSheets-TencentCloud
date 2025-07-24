@@ -1,563 +1,161 @@
-I will provide the updated script with Tencent Cloud services and their public links, organized according to your specified order. Please note that for some general categories, the links will point to the main product page, as a direct single "public link" for the entire category might not exist. I've done my best to find relevant links based on your request and the structure of the provided HTML.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agent Scalability Cheatsheet</title>
+    <title>Cloud Provider Services Comparison</title>
     <style>
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Estilos do corpo para o tema claro */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 10px;
-            line-height: 1.3;
-            color: #e2e8f0;
-            background: #1a202c;
-            padding: 10px;
-            max-width: 210mm;
-            margin: 0 auto;
+            font-size: 14px; /* Aumentado para melhor legibilidade */
+            line-height: 1.6;
+            color: #2d3748; /* Cor de texto mais escura */
+            background: #f7fafc; /* Fundo claro */
+            padding: 20px;
+            max-width: 1200px; /* Largura máxima para a tabela */
+            margin: 0 auto; /* Centraliza o conteúdo */
         }
 
-        .container {
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        /* Removido o container, body já serve para max-width */
 
+        /* Header para o título principal da tabela */
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #4a5568; /* Cor de fundo mais neutra para o cabeçalho */
             color: white;
-            padding: 6px 10px;
+            padding: 15px 20px;
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
             border-radius: 4px;
-            position: relative;
-        }
-
-        .header::before {
-            content: "⚡";
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-        }
-
-        .header::after {
-            content: "🔗";
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
         }
 
         .header h1 {
-            font-size: 16px;
-            margin-bottom: 2px;
+            font-size: 24px;
+            margin-bottom: 5px;
             font-weight: 700;
         }
 
         .header p {
-            font-size: 9px;
+            font-size: 12px;
             opacity: 0.9;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 8px;
-            margin-bottom: 8px;
+        /* Apenas a seção da tabela de comparação */
+        .comparison-section {
+            background: #ffffff; /* Fundo branco para a tabela */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
 
-        .section {
-            background: #2d3748;
-            border-radius: 4px;
-            padding: 8px;
-            border-left: 3px solid #667eea;
-        }
-
-        .section h2 {
-            color: #667eea;
-            font-size: 12px;
-            margin-bottom: 6px;
+        .comparison-section h2 {
+            color: #3182ce; /* Azul para o título da seção */
+            font-size: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 10px;
+            text-align: center; /* Centraliza o título */
+            justify-content: center; /* Centraliza o conteúdo */
         }
 
-        .section h3 {
-            color: #a78bfa;
-            font-size: 10px;
-            margin: 4px 0 2px 0;
-        }
-
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .section li {
-            padding: 1px 0;
-            font-size: 9px;
-            border-bottom: 1px solid #4a5568;
-        }
-
-        .section li:last-child {
-            border-bottom: none;
-        }
-
-        .code {
-            background: #1a202c;
-            color: #68d391;
-            padding: 2px 4px;
-            border-radius: 2px;
-            font-family: 'Courier New', monospace;
-            font-size: 8px;
-        }
-
+        /* Estilos da tabela */
         .table {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 4px;
+            border-collapse: collapse; /* Colapsa as bordas das células */
+            margin-top: 15px;
         }
 
         .table th,
         .table td {
-            padding: 3px 4px;
+            padding: 10px 15px; /* Mais preenchimento para células */
             text-align: left;
-            border-bottom: 1px solid #4a5568;
-            font-size: 8px;
+            border: 1px solid #e2e8f0; /* Bordas finas e claras */
+            font-size: 13px; /* Tamanho da fonte para as células */
         }
 
         .table th {
-            background: #4a5568;
-            color: #e2e8f0;
+            background: #edf2f7; /* Fundo mais claro para o cabeçalho da tabela */
+            color: #2d3748; /* Texto mais escuro para o cabeçalho */
             font-weight: 600;
+            white-space: nowrap; /* Evita quebras de linha em headers curtos */
         }
 
         .table tr:nth-child(even) {
-            background: #2d3748;
+            background: #f7fafc; /* Fundo ligeiramente diferente para linhas pares */
+        }
+
+        /* Estilos dos links */
+        .table a {
+            color: #3182ce; /* Cor azul para os links (igual ao comparecloud.in) */
+            text-decoration: none; /* Remove sublinhado padrão */
+        }
+
+        .table a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
         }
 
         .icon {
-            font-size: 12px;
-            margin-right: 4px;
+            font-size: 20px; /* Ícone maior para o título da tabela */
+            margin-right: 5px;
         }
 
-        .warning {
-            color: #fbd38d;
-        }
-
-        .success {
-            color: #68d391;
-        }
-
-        .error {
-            color: #fc8181;
-        }
-
-        .info {
-            color: #63b3ed;
-        }
-
-        .quick-ref {
-            background: #2d3748;
-            border-radius: 4px;
-            padding: 8px;
-            margin-top: 8px;
-            border: 2px solid #667eea;
-        }
-
-        .quick-ref h2 {
-            color: #667eea;
-            font-size: 12px;
-            margin-bottom: 6px;
-            text-align: center;
-        }
-
-        .quick-ref-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-        }
-
-        .metric {
-            background: #4a5568;
-            padding: 4px 6px;
-            border-radius: 3px;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-size: 14px;
-            font-weight: bold;
-            color: #68d391;
-        }
-
-        .metric-label {
-            font-size: 8px;
-            color: #a0aec0;
-        }
-
+        /* Estilos de impressão, ajustados para o tema claro */
         @media print {
             body {
                 background: white;
                 color: black;
                 padding: 5mm;
-                font-size: 9px;
+                font-size: 10px;
             }
 
             .header {
-                background: #667eea !important;
+                background: #4a5568 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .section {
-                background: #f7fafc !important;
+            .comparison-section {
+                background: white !important;
                 color: black !important;
-                border-left: 3px solid #667eea !important;
+                box-shadow: none !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .section h2 {
-                color: #667eea !important;
-            }
-
-            .section h3 {
-                color: #553c9a !important;
-            }
-
-            .code {
-                background: #edf2f7 !important;
-                color: #2d3748 !important;
+            .comparison-section h2 {
+                color: #3182ce !important;
             }
 
             .table th {
-                background: #e2e8f0 !important;
+                background: #edf2f7 !important;
                 color: black !important;
             }
 
-            .quick-ref {
-                background: #f7fafc !important;
-                border: 2px solid #667eea !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            .table tr:nth-child(even) {
+                background: #f0f0f0 !important;
             }
 
-            .metric {
-                background: #e2e8f0 !important;
-                color: black !important;
+            .table a {
+                color: #3182ce !important;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>AI Agent Scalability Architecture</h1>
-            <p>Guidelines for designing AI agents that scale efficiently to handle increased workloads and complexity</p>
-        </div>
-
-        <div class="grid">
-            <div class="section">
-                <h2><span class="icon">🏗️</span>Architecture Patterns</h2>
-                <h3>Microservices</h3>
-                <ul>
-                    <li>• Decompose agents into services</li>
-                    <li>• Independent scaling per service</li>
-                    <li>• API Gateway for routing</li>
-                    <li>• Service discovery mechanisms</li>
-                </ul>
-                <h3>Event-Driven</h3>
-                <ul>
-                    <li>• Asynchronous message processing</li>
-                    <li>• Event sourcing for state</li>
-                    <li>• Message queues (RabbitMQ, Kafka)</li>
-                    <li>• Pub/sub patterns</li>
-                </ul>
-                <h3>Serverless</h3>
-                <ul>
-                    <li>• Function-as-a-Service (FaaS)</li>
-                    <li>• Auto-scaling capabilities</li>
-                    <li>• Pay-per-execution model</li>
-                    <li>• Cold start optimization</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">📈</span>Scaling Strategies</h2>
-                <h3>Horizontal Scaling</h3>
-                <ul>
-                    <li>• Add more agent instances</li>
-                    <li>• Load balancing algorithms</li>
-                    <li>• Stateless design principles</li>
-                    <li>• Container orchestration</li>
-                </ul>
-                <h3>Vertical Scaling</h3>
-                <ul>
-                    <li>• Increase CPU/memory/GPU</li>
-                    <li>• Model optimization techniques</li>
-                    <li>• Resource pool management</li>
-                    <li>• Performance profiling</li>
-                </ul>
-                <h3>Auto-scaling</h3>
-                <ul>
-                    <li>• Metrics-based scaling</li>
-                    <li>• Predictive scaling</li>
-                    <li>• Kubernetes HPA/VPA</li>
-                    <li>• Custom scaling policies</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">⚡</span>Performance Optimization</h2>
-                <h3>Model Optimization</h3>
-                <ul>
-                    <li>• Model quantization</li>
-                    <li>• Pruning techniques</li>
-                    <li>• Knowledge distillation</li>
-                    <li>• Batching strategies</li>
-                </ul>
-                <h3>Caching</h3>
-                <ul>
-                    <li>• Response caching (Redis)</li>
-                    <li>• Model caching</li>
-                    <li>• Feature caching</li>
-                    <li>• CDN for static assets</li>
-                </ul>
-                <h3>Acceleration</h3>
-                <ul>
-                    <li>• GPU/TPU utilization</li>
-                    <li>• TensorRT optimization</li>
-                    <li>• ONNX runtime</li>
-                    <li>• Hardware acceleration</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">🔄</span>Communication Patterns</h2>
-                <h3>Synchronous</h3>
-                <ul>
-                    <li>• REST APIs</li>
-                    <li>• gRPC for performance</li>
-                    <li>• GraphQL for flexibility</li>
-                    <li>• WebSocket for real-time</li>
-                </ul>
-                <h3>Asynchronous</h3>
-                <ul>
-                    <li>• Message queues</li>
-                    <li>• Event streams</li>
-                    <li>• Webhook callbacks</li>
-                    <li>• Producer-consumer patterns</li>
-                </ul>
-                <h3>Load Balancing</h3>
-                <ul>
-                    <li>• Round-robin</li>
-                    <li>• Least connections</li>
-                    <li>• Weighted routing</li>
-                    <li>• Health checks</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">💾</span>Data Management</h2>
-                <h3>Storage Patterns</h3>
-                <ul>
-                    <li>• Database sharding</li>
-                    <li>• Read replicas</li>
-                    <li>• Data partitioning</li>
-                    <li>• Vector databases</li>
-                </ul>
-                <h3>State Management</h3>
-                <ul>
-                    <li>• Stateless design</li>
-                    <li>• Session stores</li>
-                    <li>• Distributed caching</li>
-                    <li>• Event sourcing</li>
-                </ul>
-                <h3>Data Pipeline</h3>
-                <ul>
-                    <li>• Stream processing</li>
-                    <li>• ETL pipelines</li>
-                    <li>• Data validation</li>
-                    <li>• Schema evolution</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">🛡️</span>Resilience & Fault Tolerance</h2>
-                <h3>Circuit Breakers</h3>
-                <ul>
-                    <li>• Hystrix/Resilience4j</li>
-                    <li>• Timeout configurations</li>
-                    <li>• Fallback strategies</li>
-                    <li>• Bulkhead isolation</li>
-                </ul>
-                <h3>Retry Mechanisms</h3>
-                <ul>
-                    <li>• Exponential backoff</li>
-                    <li>• Jitter strategies</li>
-                    <li>• Dead letter queues</li>
-                    <li>• Idempotency patterns</li>
-                </ul>
-                <h3>Health Monitoring</h3>
-                <ul>
-                    <li>• Health check endpoints</li>
-                    <li>• Liveness probes</li>
-                    <li>• Readiness probes</li>
-                    <li>• Graceful degradation</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">📊</span>Monitoring & Observability</h2>
-                <h3>Metrics</h3>
-                <ul>
-                    <li>• Response times</li>
-                    <li>• Throughput (RPS)</li>
-                    <li>• Error rates</li>
-                    <li>• Resource utilization</li>
-                </ul>
-                <h3>Logging</h3>
-                <ul>
-                    <li>• Structured logging</li>
-                    <li>• Correlation IDs</li>
-                    <li>• Log aggregation</li>
-                    <li>• ELK/EFK stack</li>
-                </ul>
-                <h3>Tracing</h3>
-                <ul>
-                    <li>• Distributed tracing</li>
-                    <li>• Jaeger/Zipkin</li>
-                    <li>• OpenTelemetry</li>
-                    <li>• Performance profiling</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">🔐</span>Security at Scale</h2>
-                <h3>Authentication</h3>
-                <ul>
-                    <li>• JWT tokens</li>
-                    <li>• OAuth 2.0/OIDC</li>
-                    <li>• API key management</li>
-                    <li>• Token rotation</li>
-                </ul>
-                <h3>Rate Limiting</h3>
-                <ul>
-                    <li>• Token bucket algorithm</li>
-                    <li>• Sliding window</li>
-                    <li>• Per-user limits</li>
-                    <li>• DDoS protection</li>
-                </ul>
-                <h3>Data Protection</h3>
-                <ul>
-                    <li>• Encryption at rest</li>
-                    <li>• Encryption in transit</li>
-                    <li>• PII data handling</li>
-                    <li>• Audit logging</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2><span class="icon">🚀</span>Deployment Strategies</h2>
-                <h3>Container Orchestration</h3>
-                <ul>
-                    <li>• Kubernetes clusters</li>
-                    <li>• Docker Swarm</li>
-                    <li>• Resource requests/limits</li>
-                    <li>• Pod autoscaling</li>
-                </ul>
-                <h3>CI/CD Pipeline</h3>
-                <ul>
-                    <li>• Blue-green deployment</li>
-                    <li>• Canary releases</li>
-                    <li>• A/B testing</li>
-                    <li>• Rollback strategies</li>
-                </ul>
-                <h3>Infrastructure as Code</h3>
-                <ul>
-                    <li>• Terraform/Pulumi</li>
-                    <li>• Helm charts</li>
-                    <li>• GitOps workflows</li>
-                    <li>• Environment management</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="quick-ref">
-            <h2>📋 Quick Reference - Scaling Metrics & Thresholds</h2>
-            <div class="quick-ref-grid">
-                <div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Metric</th>
-                                <th>Target</th>
-                                <th>Scale Trigger</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Response Time</td>
-                                <td>&lt; 200ms</td>
-                                <td>&gt; 500ms</td>
-                            </tr>
-                            <tr>
-                                <td>CPU Usage</td>
-                                <td>&lt; 70%</td>
-                                <td>&gt; 80%</td>
-                            </tr>
-                            <tr>
-                                <td>Memory Usage</td>
-                                <td>&lt; 80%</td>
-                                <td>&gt; 90%</td>
-                            </tr>
-                            <tr>
-                                <td>Error Rate</td>
-                                <td>&lt; 0.1%</td>
-                                <td>&gt; 1%</td>
-                            </tr>
-                            <tr>
-                                <td>Queue Depth</td>
-                                <td>&lt; 100</td>
-                                <td>&gt; 1000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <div class="metric">
-                        <div class="metric-value">99.9%</div>
-                        <div class="metric-label">TARGET UPTIME</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">&lt; 100ms</div>
-                        <div class="metric-label">P95 LATENCY</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">1000 RPS</div>
-                        <div class="metric-label">THROUGHPUT</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">&lt; 30s</div>
-                        <div class="metric-label">SCALE-UP TIME</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="header">
+        <h1>Cloud Provider Services Comparison</h1>
+        <p>A comprehensive overview of services across major cloud providers.</p>
     </div>
-    <div class="section">
+
+    <div class="comparison-section">
         <h2><span class="icon">☁️</span>Cloud Provider Services Comparison</h2>
         <table class="table">
             <thead>
@@ -992,6 +590,7 @@ I will provide the updated script with Tencent Cloud services and their public l
                     <td><a href="https://www.ibm.com/internet-of-things/platform/iot-platform">IBM Watson IoT Platform</a></td>
                     <td><a href="https://www.oracle.com/internet-of-things/platform/">IoT Cloud</a></td>
                     <td><a href="https://www.alibabacloud.com/product/iot-platform">IoT Platform</a></td>
+                    <td><a href="https://www.alibabacloud.com/product/iot-platform">IoT Platform</a></td>
                     <td><a href="https://support.huaweicloud.com/intl/en-us/productdesc-iotda/index.html">IoT Device Access</a></td>
                     <td><a href="https://intl.cloud.tencent.com/product/iotexplorer">IoT Explorer</a></td>
                 </tr>
@@ -1036,4 +635,3 @@ I will provide the updated script with Tencent Cloud services and their public l
     </div>
 </body>
 </html>
-```
