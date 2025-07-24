@@ -92,14 +92,19 @@
             background: #f7fafc; /* Fundo ligeiramente diferente para linhas pares */
         }
 
-        /* Estilos dos links */
+        /* Estilos dos links - ALTERADO PARA BRANCO */
         .table a {
-            color: #3182ce; /* Cor azul para os links (igual ao comparecloud.in) */
+            color: #ffffff; /* Cor branca para os links */
             text-decoration: none; /* Remove sublinhado padrão */
+            background-color: #3182ce; /* Adicionado um fundo azul para contraste */
+            padding: 2px 5px;
+            border-radius: 3px;
+            display: inline-block; /* Para que o padding e border-radius funcionem */
         }
 
         .table a:hover {
             text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+            opacity: 0.9; /* Leve opacidade no hover */
         }
 
         .icon {
@@ -144,7 +149,8 @@
             }
 
             .table a {
-                color: #3182ce !important;
+                color: #3182ce !important; /* Mantém azul para impressão para legibilidade */
+                background-color: transparent !important; /* Remove fundo para impressão */
             }
         }
     </style>
