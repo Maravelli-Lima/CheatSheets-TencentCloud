@@ -53,6 +53,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            overflow-x: auto; /* Adicionado para permitir rolagem horizontal se a tabela for muito larga */
         }
 
         .comparison-section h2 {
@@ -71,21 +72,23 @@
             width: 100%;
             border-collapse: collapse; /* Colapsa as bordas das células */
             margin-top: 15px;
+            table-layout: fixed; /* Fixa o layout da tabela para larguras de coluna uniformes */
         }
 
         .table th,
         .table td {
-            padding: 10px 15px; /* Mais preenchimento para células */
-            text-align: left;
+            padding: 8px 10px; /* Mais preenchimento para células */
+            text-align: center; /* Centraliza o texto nos cabeçalhos e células */
             border: 1px solid #e2e8f0; /* Bordas finas e claras */
-            font-size: 13px; /* Tamanho da fonte para as células */
+            font-size: 12px; /* Tamanho da fonte para as células */
+            word-wrap: break-word; /* Permite quebras de linha longas em palavras */
         }
 
         .table th {
             background: #edf2f7; /* Fundo mais claro para o cabeçalho da tabela */
             color: #2d3748; /* Texto mais escuro para o cabeçalho */
             font-weight: 600;
-            white-space: nowrap; /* Evita quebras de linha em headers curtos */
+            white-space: normal; /* Permite que o texto do cabeçalho quebre linha */
         }
 
         .table tr:nth-child(even) {
@@ -100,6 +103,7 @@
             padding: 2px 5px;
             border-radius: 3px;
             display: inline-block; /* Para que o padding e border-radius funcionem */
+            white-space: normal; /* Permite que o texto do link quebre linha */
         }
 
         .table a:hover {
@@ -114,17 +118,21 @@
 
         /* Estilos para os logos dos provedores */
         .provider-logo {
-            height: 40px; /* Tamanho fixo para os logos */
-            width: 40px; /* Largura fixa para os logos */
+            height: 25px; /* Tamanho reduzido para os logos */
+            width: auto; /* Largura automática para manter a proporção */
             vertical-align: middle; /* Alinha verticalmente com o texto */
-            margin-right: 5px; /* Espaçamento à direita do logo */
+            margin-bottom: 5px; /* Espaçamento abaixo do logo */
             border-radius: 3px; /* Bordas arredondadas para os logos */
+            display: block; /* Para que o margin-bottom funcione */
+            margin-left: auto;
+            margin-right: auto; /* Centraliza o logo */
         }
 
         .table th div {
             display: flex; /* Usa flexbox para alinhar logo e texto */
-            align-items: center; /* Centraliza verticalmente os itens */
-            justify-content: center; /* Centraliza horizontalmente o conteúdo do cabeçalho */
+            flex-direction: column; /* Coloca o logo acima do texto */
+            align-items: center; /* Centraliza horizontalmente os itens */
+            justify-content: center; /* Centraliza verticalmente o conteúdo do cabeçalho */
             height: 100%; /* Garante que o div ocupe a altura total do th */
         }
 
@@ -259,7 +267,7 @@
                     <td><a href="https://cloud.google.com/compute">Compute Engine</a></td>
                     <td><a href="https://www.ibm.com/cloud/vpc">VPC Virtual Server</a></td>
                     <td><a href="https://www.oracle.com/cloud/compute/">OCI Compute</a></td>
-                    <td><a href="https://www.alibabacl.com/product/ecs">ECS</a></td>
+                    <td><a href="https://www.alibabacloud.com/product/ecs">ECS</a></td>
                     <td><a href="https://www.huaweicloud.com/intl/en-us/product/ecs.html">ECS</a></td>
                     <td><a href="https://intl.cloud.tencent.com/product/cvm">CVM</a></td>
                 </tr>
