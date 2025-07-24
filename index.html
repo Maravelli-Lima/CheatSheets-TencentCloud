@@ -15,7 +15,6 @@
         /* Estilos do corpo para o tema claro */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 14px; /* Aumentado para melhor legibilidade */
             line-height: 1.6;
             color: #2d3748; /* Cor de texto mais escura */
             background: #f7fafc; /* Fundo claro */
@@ -23,8 +22,6 @@
             max-width: 1200px; /* Largura máxima para a tabela */
             margin: 0 auto; /* Centraliza o conteúdo */
         }
-
-        /* Removido o container, body já serve para max-width */
 
         /* Header para o título principal da tabela */
         .header {
@@ -77,12 +74,25 @@
 
         .table th,
         .table td {
-            padding: 8px 10px; /* Mais preenchimento para células */
+            padding: 4px 6px; /* Mais preenchimento para células */
             text-align: center; /* Centraliza o texto nos cabeçalhos e células */
             border: 1px solid #e2e8f0; /* Bordas finas e claras */
-            font-size: 12px; /* Tamanho da fonte para as células */
+            font-size: 10px; /* Tamanho da fonte para as células */
             word-wrap: break-word; /* Permite quebras de linha longas em palavras */
         }
+
+        .table th:first-child {
+            width: 12%; /* Largura para a coluna Category */
+        }
+
+        .table th:nth-child(2) {
+            width: 12%; /* Largura para a coluna Service */
+        }
+
+        .table th:nth-child(n+3) {
+            width: 9.5%; /* Largura para as colunas dos provedores (8 provedores * 9.5% = 76% + 12% + 12% = 100%) */
+        }
+
 
         .table th {
             background: #edf2f7; /* Fundo mais claro para o cabeçalho da tabela */
@@ -118,10 +128,10 @@
 
         /* Estilos para os logos dos provedores */
         .provider-logo {
-            height: 25px; /* Tamanho reduzido para os logos */
+            height: 20px; /* Tamanho reduzido para os logos */
             width: auto; /* Largura automática para manter a proporção */
             vertical-align: middle; /* Alinha verticalmente com o texto */
-            margin-bottom: 5px; /* Espaçamento abaixo do logo */
+            margin-bottom: 3px; /* Espaçamento abaixo do logo */
             border-radius: 3px; /* Bordas arredondadas para os logos */
             display: block; /* Para que o margin-bottom funcione */
             margin-left: auto;
@@ -134,6 +144,19 @@
             align-items: center; /* Centraliza horizontalmente os itens */
             justify-content: center; /* Centraliza verticalmente o conteúdo do cabeçalho */
             height: 100%; /* Garante que o div ocupe a altura total do th */
+        }
+
+        /* Estilos para os ícones de serviço */
+        .service-item-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Alinha à esquerda */
+            gap: 5px; /* Espaçamento entre o ícone e o texto */
+        }
+
+        .service-item-icon {
+            font-size: 14px; /* Tamanho do ícone */
+            line-height: 1; /* Garante que o ícone não adicione espaçamento extra na linha */
         }
 
         /* Estilos de impressão, ajustados para o tema claro */
@@ -198,49 +221,49 @@
                     <th>Service</th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png" alt="AWS Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF9900/ffffff?text=AWS';" title="AWS Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png" alt="AWS Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/FF9900/ffffff?text=AWS';">
                             AWS
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2560px-Microsoft_Azure.svg.png" alt="Azure Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/0078D4/ffffff?text=Azure';" title="Azure Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2560px-Microsoft_Azure.svg.png" alt="Azure Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/0078D4/ffffff?text=Azure';">
                             Azure
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png" alt="GCP Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/4285F4/ffffff?text=GCP';" title="GCP Logo">
+                            <img src="https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png" alt="GCP Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/4285F4/ffffff?text=GCP';">
                             GCP
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png" alt="IBM Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/0062FF/ffffff?text=IBM';" title="IBM Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png" alt="IBM Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/0062FF/ffffff?text=IBM';">
                             IBM
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Oracle_logo.svg/2560px-Oracle_logo.svg.png" alt="Oracle Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/F80000/ffffff?text=Oracle';" title="Oracle Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Oracle_logo.svg/2560px-Oracle_logo.svg.png" alt="Oracle Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/F80000/ffffff?text=Oracle';">
                             Oracle
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Alibaba_Cloud_logo.svg/2560px-Alibaba_Cloud_logo.svg.png" alt="Alibaba Cloud Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF6A00/ffffff?text=Alibaba';" title="Alibaba Cloud Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Alibaba_Cloud_logo.svg/2560px-Alibaba_Cloud_logo.svg.png" alt="Alibaba Cloud Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/FF6A00/ffffff?text=Alibaba';">
                             Alibaba
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Huawei_logo.svg/2560px-Huawei_logo.svg.png" alt="Huawei Cloud Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF0000/ffffff?text=Huawei';" title="Huawei Cloud Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Huawei_logo.svg/2560px-Huawei_logo.svg.png" alt="Huawei Cloud Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/FF0000/ffffff?text=Huawei';">
                             Huawei
                         </div>
                     </th>
                     <th>
                         <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Tencent_Cloud_logo.svg/2560px-Tencent_Cloud_logo.svg.png" alt="Tencent Cloud Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/00C250/ffffff?text=Tencent';" title="Tencent Cloud Logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Tencent_Cloud_logo.svg/2560px-Tencent_Cloud_logo.svg.png" alt="Tencent Cloud Logo" class="provider-logo" onerror="this.onerror=null;this.src='https://placehold.co/20x20/00C250/ffffff?text=Tencent';" title="Tencent Cloud Logo">
                             Tencent Cloud
                         </div>
                     </th>
@@ -249,7 +272,11 @@
             <tbody>
                 <tr>
                     <td>Compute</td>
-                    <td>Shared Web Hosting</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🌐</span> Shared Web Hosting
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/amplify/">AWS Amplify</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/app-service/web/">Web Apps</a></td>
                     <td><a href="https://firebase.google.com/">Firebase</a></td>
@@ -261,7 +288,11 @@
                 </tr>
                 <tr>
                     <td>Compute</td>
-                    <td>Virtual Server</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🖥️</span> Virtual Server
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/ec2/">EC2</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines</a></td>
                     <td><a href="https://cloud.google.com/compute">Compute Engine</a></td>
@@ -273,7 +304,11 @@
                 </tr>
                 <tr>
                     <td>Compute</td>
-                    <td>Bare Metal Server</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">⚙️</span> Bare Metal Server
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/ec2/instance-types/bare-metal/">EC2 Bare Metal</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/products/virtual-machines/sizes-baremetal/">Bare Metal</a></td>
                     <td><a href="https://cloud.google.com/bare-metal">Bare Metal Solution</a></td>
@@ -285,7 +320,11 @@
                 </tr>
                 <tr>
                     <td>Storage</td>
-                    <td>Object Storage</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🗄️</span> Object Storage
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/s3/">S3</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Blob</a></td>
                     <td><a href="https://cloud.google.com/storage">Cloud Storage</a></td>
@@ -297,7 +336,11 @@
                 </tr>
                 <tr>
                     <td>Storage</td>
-                    <td>Block Storage</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">💾</span> Block Storage
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/ebs/">EBS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/storage/disks/">Disk Storage</a></td>
                     <td><a href="https://cloud.google.com/compute/docs/disks/">Persistent Disk</a></td>
@@ -309,7 +352,11 @@
                 </tr>
                 <tr>
                     <td>Storage</td>
-                    <td>File Storage</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">📁</span> File Storage
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/efs/">EFS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/storage/files/">Azure Files</a></td>
                     <td><a href="https://cloud.google.com/filestore">Cloud Filestore</a></td>
@@ -321,7 +368,11 @@
                 </tr>
                 <tr>
                     <td>Database</td>
-                    <td>Managed MySQL</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🗄️</span> Managed MySQL
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/rds/mysql/">RDS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/mysql/">Azure Database for MySQL</a></td>
                     <td><a href="https://cloud.google.com/sql/docs/mysql">Cloud SQL</a></td>
@@ -333,7 +384,11 @@
                 </tr>
                 <tr>
                     <td>Database</td>
-                    <td>Managed PostgreSQL</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🗄️</span> Managed PostgreSQL
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/rds/postgresql/">RDS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/postgresql/">Azure Database for PostgreSQL</a></td>
                     <td><a href="https://cloud.google.com/sql/docs/postgres">Cloud SQL</a></td>
@@ -345,7 +400,11 @@
                 </tr>
                 <tr>
                     <td>Database</td>
-                    <td>NoSQL Database</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🗄️</span> NoSQL Database
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/dynamodb/">DynamoDB</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</a></td>
                     <td><a href="https://cloud.google.com/datastore">Cloud Datastore</a></td>
@@ -357,7 +416,11 @@
                 </tr>
                 <tr>
                     <td>Migration Services</td>
-                    <td>Database Migration</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">➡️</span> Database Migration
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/dms/">Database Migration Service</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/database-migration/">Azure Database Migration Service</a></td>
                     <td><a href="https://cloud.google.com/database-migration">Database Migration Service</a></td>
@@ -369,7 +432,11 @@
                 </tr>
                 <tr>
                     <td>Migration Services</td>
-                    <td>Server Migration</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">➡️</span> Server Migration
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/server-migration-service/">Server Migration Service</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/azure-migrate/">Azure Migrate</a></td>
                     <td><a href="https://cloud.google.com/migrate/compute-engine">Migrate for Compute Engine</a></td>
@@ -381,7 +448,11 @@
                 </tr>
                 <tr>
                     <td>Application Discovery Services</td>
-                    <td>Application Discovery</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🔍</span> Application Discovery
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/application-discovery/">Application Discovery Service</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/azure-migrate/">Azure Migrate</a></td>
                     <td><a href="https://cloud.google.com/migrate/application-discovery">Application Discovery</a></td>
@@ -393,7 +464,11 @@
                 </tr>
                 <tr>
                     <td>Networking & Content Delivery</td>
-                    <td>Load Balancer</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">↔️</span> Load Balancer
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/elasticloadbalancing/">ELB</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/load-balancer/">Load Balancer</a></td>
                     <td><a href="https://cloud.google.com/load-balancing">Load Balancing</a></td>
@@ -405,7 +480,11 @@
                 </tr>
                 <tr>
                     <td>Networking & Content Delivery</td>
-                    <td>CDN</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">💨</span> CDN
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/cloudfront/">CloudFront</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/cdn/">CDN</a></td>
                     <td><a href="https://cloud.google.com/cdn">CDN</a></td>
@@ -417,7 +496,11 @@
                 </tr>
                 <tr>
                     <td>Networking</td>
-                    <td>VPC</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">☁️</span> VPC
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/vpc/">VPC</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/virtual-network/">Virtual Network</a></td>
                     <td><a href="https://cloud.google.com/vpc">VPC</a></td>
@@ -429,7 +512,11 @@
                 </tr>
                 <tr>
                     <td>Networking</td>
-                    <td>Direct Connect</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🔗</span> Direct Connect
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/directconnect/">Direct Connect</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/expressroute/">ExpressRoute</a></td>
                     <td><a href="https://cloud.google.com/network-connectivity/docs/interconnect/dedicated-interconnect">Dedicated Interconnect</a></td>
@@ -441,7 +528,11 @@
                 </tr>
                 <tr>
                     <td>Hybrid Cloud</td>
-                    <td>Hybrid Cloud Solution</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">ผสม</span> Hybrid Cloud Solution
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/hybrid/">Hybrid Cloud</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/overview/hybrid-cloud/">Hybrid Cloud</a></td>
                     <td><a href="https://cloud.google.com/hybrid-cloud">Hybrid and Multicloud</a></td>
@@ -453,7 +544,11 @@
                 </tr>
                 <tr>
                     <td>Developer Tools</td>
-                    <td>Code Repository</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">👨‍💻</span> Code Repository
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/codesuite/codepipeline/">CodePipeline</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/devops/repos/">Azure Repos</a></td>
                     <td><a href="https://cloud.google.com/cloud-source-repositories">Cloud Source Repositories</a></td>
@@ -465,7 +560,11 @@
                 </tr>
                 <tr>
                     <td>Developer Tools</td>
-                    <td>CI/CD</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🚀</span> CI/CD
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/devops/cicd/">CI/CD on AWS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/solutions/devops/cicd/">CI/CD</a></td>
                     <td><a href="https://cloud.google.com/ci-cd">CI/CD</a></td>
@@ -477,7 +576,11 @@
                 </tr>
                 <tr>
                     <td>Management Tools</td>
-                    <td>Cloud Monitoring</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">📈</span> Cloud Monitoring
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/cloudwatch/">CloudWatch</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/monitor/">Azure Monitor</a></td>
                     <td><a href="https://cloud.google.com/monitoring">Cloud Monitoring</a></td>
@@ -489,7 +592,11 @@
                 </tr>
                 <tr>
                     <td>Management Tools</td>
-                    <td>Logging Service</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">📄</span> Logging Service
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/cloudwatch/features/#Logs">CloudWatch Logs</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/monitor/logs/">Azure Monitor Logs</a></td>
                     <td><a href="https://cloud.google.com/logging">Cloud Logging</a></td>
@@ -501,7 +608,11 @@
                 </tr>
                 <tr>
                     <td>Disaster Recovery Services</td>
-                    <td>Disaster Recovery</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🔄</span> Disaster Recovery
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/recovery/">Disaster Recovery</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/site-recovery/">Azure Site Recovery</a></td>
                     <td><a href="https://cloud.google.com/architecture/disaster-recovery">Disaster Recovery</a></td>
@@ -513,7 +624,11 @@
                 </tr>
                 <tr>
                     <td>Security & Identity, Compliance</td>
-                    <td>WAF</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🛡️</span> WAF
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/waf/">AWS WAF</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/web-application-firewall/">WAF</a></td>
                     <td><a href="https://cloud.google.com/armor">Cloud Armor</a></td>
@@ -525,7 +640,11 @@
                 </tr>
                 <tr>
                     <td>Security & Identity, Compliance</td>
-                    <td>IAM</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🔑</span> IAM
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/iam/">IAM</a></td>
                     <td><a href="https://learn.microsoft.com/en-us/azure/active-directory/">Azure AD</a></td>
                     <td><a href="https://cloud.google.com/iam">IAM</a></td>
@@ -537,7 +656,11 @@
                 </tr>
                 <tr>
                     <td>Security & Identity, Compliance</td>
-                    <td>Key Management</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🔐</span> Key Management
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/kms/">KMS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/key-vault/">Key Vault</a></td>
                     <td><a href="https://cloud.google.com/kms">Cloud KMS</a></td>
@@ -549,7 +672,11 @@
                 </tr>
                 <tr>
                     <td>Big Data & Advanced Analytics</td>
-                    <td>Big Data Platform</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">📊</span> Big Data Platform
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/big-data/">Big Data on AWS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/solutions/big-data/">Big Data</a></td>
                     <td><a href="https://cloud.google.com/solutions/big-data">Big Data</a></td>
@@ -561,7 +688,11 @@
                 </tr>
                 <tr>
                     <td>Big Data & Advanced Analytics</td>
-                    <td>Data Warehouse</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">📦</span> Data Warehouse
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/redshift/">Redshift</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/synapse-analytics/">Azure Synapse Analytics</a></td>
                     <td><a href="https://cloud.google.com/bigquery">BigQuery</a></td>
@@ -573,7 +704,11 @@
                 </tr>
                 <tr>
                     <td>Artificial Intelligence / Machine Learning</td>
-                    <td>Machine Learning Platform</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🧠</span> Machine Learning Platform
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/sagemaker/">SageMaker</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/machine-learning/">Azure Machine Learning</a></td>
                     <td><a href="https://cloud.google.com/ai-platform">AI Platform</a></td>
@@ -585,7 +720,11 @@
                 </tr>
                 <tr>
                     <td>Artificial Intelligence</td>
-                    <td>Natural Language Processing</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🗣️</span> Natural Language Processing
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/comprehend/">Amazon Comprehend</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/cognitive-services/language-service/">Language Service</a></td>
                     <td><a href="https://cloud.google.com/natural-language">Cloud Natural Language API</a></td>
@@ -597,7 +736,11 @@
                 </tr>
                 <tr>
                     <td>Artificial Intelligence</td>
-                    <td>Computer Vision</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">👁️</span> Computer Vision
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision</a></td>
                     <td><a href="https://cloud.google.com/vision">Cloud Vision API</a></td>
@@ -609,7 +752,11 @@
                 </tr>
                 <tr>
                     <td>Mobile Services</td>
-                    <td>Mobile Development Platform</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">📱</span> Mobile Development Platform
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/mobile/">AWS Mobile</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/solutions/mobile-app-development/">Mobile App Development</a></td>
                     <td><a href="https://firebase.google.com/">Firebase</a></td>
@@ -621,7 +768,11 @@
                 </tr>
                 <tr>
                     <td>Application Services</td>
-                    <td>Message Queue</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">✉️</span> Message Queue
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/sqs/">SQS</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/service-bus/">Service Bus</a></td>
                     <td><a href="https://cloud.google.com/pubsub">Cloud Pub/Sub</a></td>
@@ -633,7 +784,11 @@
                 </tr>
                 <tr>
                     <td>Business Productivity</td>
-                    <td>Collaboration Tools</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🤝</span> Collaboration Tools
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/workmail/">WorkMail</a></td>
                     <td><a href="https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products">Microsoft 365 Business</a></td>
                     <td><a href="https://workspace.google.com/">Google Workspace</a></td>
@@ -645,7 +800,11 @@
                 </tr>
                 <tr>
                     <td>Software MarketPlace</td>
-                    <td>Cloud Marketplace</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🛍️</span> Cloud Marketplace
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/marketplace/">AWS Marketplace</a></td>
                     <td><a href="https://azuremarketplace.microsoft.com/en-us/marketplace/">Azure Marketplace</a></td>
                     <td><a href="https://cloud.google.com/marketplace">Google Cloud Marketplace</a></td>
@@ -657,7 +816,11 @@
                 </tr>
                 <tr>
                     <td>Internet of Things</td>
-                    <td>IoT Platform</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">💡</span> IoT Platform
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/iot/">AWS IoT Core</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/iot-hub/">Azure IoT Hub</a></td>
                     <td><a href="https://cloud.google.com/iot-core">Cloud IoT Core</a></td>
@@ -670,7 +833,11 @@
                 </tr>
                 <tr>
                     <td>Game Development</td>
-                    <td>Game Services</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🎮</span> Game Services
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/gametech/">AWS Game Tech</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/solutions/gaming/">Azure Gaming</a></td>
                     <td><a href="https://cloud.google.com/gaming">Gaming</a></td>
@@ -682,7 +849,11 @@
                 </tr>
                 <tr>
                     <td>Robotics Development</td>
-                    <td>Robotics Services</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🤖</span> Robotics Services
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/robotics/">AWS RoboMaker</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/solutions/robotics/">Azure Robotics</a></td>
                     <td><a href="https://cloud.google.com/robotics">Robotics</a></td>
@@ -694,7 +865,11 @@
                 </tr>
                 <tr>
                     <td>Development & Testing</td>
-                    <td>Testing Services</td>
+                    <td>
+                        <div class="service-item-content">
+                            <span class="service-item-icon">🧪</span> Testing Services
+                        </div>
+                    </td>
                     <td><a href="https://aws.amazon.com/device-farm/">AWS Device Farm</a></td>
                     <td><a href="https://azure.microsoft.com/en-us/services/devops/test-plans/">Azure Test Plans</a></td>
                     <td><a href="https://cloud.google.com/testing/cloud-test-lab">Cloud Test Lab</a></td>
